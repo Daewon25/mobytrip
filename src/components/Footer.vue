@@ -1,0 +1,54 @@
+<template>
+  <div class="footer">
+    <div class="links">
+      <div class="link">
+        <a href="#">About us</a>
+      </div>
+      <div class="link">
+        <a href="#">Terms and Services</a>
+      </div>
+      <div class="link">
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="link">
+        <a href="#">Support</a>
+      </div>
+    </div>
+    <div class="copyrights">
+      (c) 2022 mobytrip, All Rights Reserved
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Footer"
+}
+</script>
+
+<style lang="scss" scoped>
+@import "@/styles/_colors.scss";
+.footer {
+  background: $blue2;
+  padding: 48px 100px;
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  .links {
+    display: flex;
+    .link {
+      margin-right: 45px;
+      a {
+        font-weight: 500;
+        font-size: 14px;
+        color: $black;
+        text-decoration: none;
+      }
+    }
+  }
+  .copyrights {
+    margin-left: auto;
+    font-size: 14px;
+  }
+}
+</style>
