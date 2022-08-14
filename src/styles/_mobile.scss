@@ -219,42 +219,6 @@
     .right-section {
       display: flex;
       flex-direction: column;
-
-      .ratings {
-        margin-top: 50px;
-
-        .title {
-          display: flex;
-          align-items: center;
-          margin-bottom: 24px;
-
-          .rating {
-            width: 42px;
-            height: 42px;
-            background: $primary-blue;
-            border-radius: 5px;
-            color: #FFFFFF;
-            font-weight: 800;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-          }
-
-          .text {
-            font-weight: 700;
-            font-size: 16px;
-            color: $black;
-            margin-right: 15px;
-          }
-
-          .count {
-            font-size: 14px;
-            color: $gray;
-          }
-        }
-      }
     }
   }
 
@@ -320,6 +284,8 @@
 
   .mobile-image-section {
     display: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 }
 
@@ -349,5 +315,16 @@
         }
       }
     }
+  }
+}
+.vueperslides__arrows {
+  button {
+    padding: 0 !important;
+  }
+  .vueperslides__arrow--prev {
+    left: 0 !important;
+  }
+  .vueperslides__arrow--next {
+    right: 0 !important;
   }
 }

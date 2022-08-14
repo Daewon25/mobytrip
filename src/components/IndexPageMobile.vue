@@ -3,12 +3,18 @@
     <SubHeader/>
     <div class="container">
       <div class="mobile-image-section">
-        <vueper-slides fade :touchable="false">
-          <vueper-slide v-for="(slide, i) in slides"
-                        :key="i"
-                        :image="slide.image"
-                        :link="slide.link"
-
+        <vueper-slides fade autoplay fixed-height="400px" infinite>
+          <template #arrow-left>
+            <img src="@/assets/arrow-left-slider.svg" alt="">
+          </template>
+          <template #arrow-right>
+            <img src="@/assets/arrow-right-slider.svg" alt="">
+          </template>
+          <vueper-slide
+              v-for="(slide, i) in slides"
+              :key="i"
+              :image="slide.image"
+              :link="slide.link"
           />
         </vueper-slides>
       </div>
@@ -33,19 +39,7 @@
             <div class="hotel-address">
               500 E 4th St, Austin, TX 78701, United States
             </div>
-            <div class="ratings">
-              <div class="title">
-                <div class="rating">
-                  4.8
-                </div>
-                <div class="text">
-                  Very good
-                </div>
-                <div class="count">
-                  936 ratings
-                </div>
-              </div>
-            </div>
+            <Rating />
             <div class="hotel-category">
               <Badge v-for="badge in badges" :key="badge.id" :title="badge.name" outlined class="category-badge"/>
             </div>
@@ -192,7 +186,6 @@ import 'viewerjs/dist/viewer.css'
 import {VueperSlides, VueperSlide} from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 
-
 export default {
   name: 'IndexPageMobile',
   components: {
@@ -202,6 +195,7 @@ export default {
     'ProgressBar': () => import('@/components/UI/ProgressBar'),
     'SubHeader': () => import('@/components/SubHeader'),
     'Card': () => import('@/components/MobileCard'),
+    'Rating': () => import('@/components/UI/Rating'),
     VueperSlides,
     VueperSlide
   },
@@ -312,24 +306,20 @@ export default {
       ],
       slides: [
         {
-          title: 'El Teide Volcano, Spain',
-          content: 'Photo by Max Rive',
-          // You can also provide a URL for the image.
           image: require('@/assets/img/hotel_1.png')
         },
         {
-          title: 'El Teide Volcano, Spain',
-          content: 'Photo by Max Rive',
-          // You can also provide a URL for the image.
-          image: require('@/assets/img/hotel_1.png')
+          image: require('@/assets/img/hotel_2.png')
         },
         {
-          title: 'El Teide Volcano, Spain',
-          content: 'Photo by Max Rive',
-          // You can also provide a URL for the image.
-          image: require('@/assets/img/hotel_1.png')
+          image: require('@/assets/img/hotel_4.png')
         },
-        // Other slides.
+        {
+          image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+        },
+        {
+          image: "https://blog.bilderberg.nl/wp-content/uploads/2018/12/speulderbos-f.jpg",
+        },
       ],
       progressBarArr: [
         {
@@ -444,6 +434,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "src/styles/mobile";
 </style>

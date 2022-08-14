@@ -2,7 +2,7 @@
   <div class="sub-header">
    <div class="wrapper">
      <div class="icon">
-       <img src="@/assets/arrow_left.svg" alt="arrow-left">
+       <img src="@/assets/arrow_left.svg" alt="">
      </div>
      <div class="text">
        See all hotels in Austin
@@ -48,6 +48,7 @@ export default {
 @media only screen and (max-width: 700px) {
   .sub-header {
     padding: 0px 40px;
+    margin-bottom: 0px;
   }
 }
 </style>

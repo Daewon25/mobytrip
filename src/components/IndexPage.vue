@@ -113,17 +113,7 @@
             </GmapMap>
           </div>
           <div class="ratings">
-            <div class="title">
-              <div class="rating">
-                4.8
-              </div>
-              <div class="text">
-                Very good
-              </div>
-              <div class="count">
-                936 ratings
-              </div>
-            </div>
+           <Rating :rating="hotelRating.rating" :text="hotelRating.text" :count="hotelRating.count"/>
             <div class="progress-bars-section">
               <div v-for="item in progressBarArr">
               <span>
@@ -152,7 +142,7 @@
           </div>
         </div>
       </div>
-      <div class="last-search" v-if="false">
+      <div class="last-search">
         <span>Your search</span>
         <div>
           <Card
@@ -176,13 +166,12 @@
 <script>
 import 'viewerjs/dist/viewer.css'
 import {component as Viewer} from "v-viewer"
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
-
+import Rating from "@/components/UI/Rating";
 
 export default {
   name: 'IndexPage',
   components: {
+    Rating,
     'Breadcrumbs': () => import('@/components/UI/Breadcrumbs'),
     'Badge': () => import('@/components/UI/Badge'),
     'RatingStars': () => import('@/components/UI/RatingStars'),
@@ -191,8 +180,6 @@ export default {
     'SubHeader': () => import('@/components/SubHeader'),
     'Card': () => import('@/components/Card'),
     Viewer,
-    VueperSlides,
-    VueperSlide
   },
   data() {
     return {
@@ -391,7 +378,12 @@ export default {
           priceWithTaxes: '$ 429,00'
         }
       ],
-      markerPosition: { lat: 3, lng: 101 }
+      markerPosition: { lat: 3, lng: 101 },
+      hotelRating: {
+        rating: '4.5',
+        text: 'Very good',
+        count: '936 ratings'
+      }
     }
   },
   methods: {

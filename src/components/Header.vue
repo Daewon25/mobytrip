@@ -5,14 +5,14 @@
     </div>
     <div class="wrapper">
       <div class="currency">
-        <Select :options="options"/>
+        <Select :options="options" v-model="selectedCurrency"/>
       </div>
       <div class="login-button">
         <Button title="Login" white/>
       </div>
     </div>
     <div class="hamburger">
-      <img src="@/assets/hamburger.svg" alt="moby-trip-logo"/>
+      <img src="@/assets/hamburger.svg" alt=""/>
     </div>
   </header>
 </template>
@@ -26,7 +26,8 @@ export default {
   },
   data() {
     return {
-      options: ['USD', 'UAH']
+      options: ['USD', 'UAH'],
+      selectedCurrency: 'UAH'
     }
   }
 }
