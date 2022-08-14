@@ -101,7 +101,16 @@
         </div>
         <div class="right-section">
           <div class="map">
-            <img src="@/assets/img/map_plug.png" alt="">
+            <GmapMap
+                :center="{lat:3, lng:101}"
+                :zoom="7"
+                map-type-id="terrain"
+                style="height: 300px"
+            >
+              <GmapMarker
+                  :position="markerPosition"
+              />
+            </GmapMap>
           </div>
           <div class="ratings">
             <div class="title">
@@ -362,7 +371,8 @@ export default {
           address: '500 E 4th St, Austin, TX 78701, United States',
           priceWithTaxes: '$ 429,00'
         }
-      ]
+      ],
+      markerPosition: { lat: 3, lng: 101 }
     }
   },
   methods: {
