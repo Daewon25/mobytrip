@@ -11,6 +11,19 @@ import Footer from "@/components/Footer";
 
 export default {
   name: 'HomeView',
+  methods: {
+    isMobile() {
+      return screen.width <= 700;
+    }
+  },
+  created() {
+    if (this.isMobile()) {
+      this.$router.push('/mobile');
+    }
+    else {
+      this.$router.push('/desktop');
+    }
+  },
   components: {
     Header,
     Footer

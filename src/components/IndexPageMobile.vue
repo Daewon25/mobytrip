@@ -1,21 +1,16 @@
 <template>
   <div>
-    <SubHeader />
+    <SubHeader/>
     <div class="container">
-      <Breadcrumbs :items="items"/>
-      <div class="images-section">
-        <div class="left">
-          <img src="@/assets/img/image_1.jpg" alt="apartment image">
-        </div>
-        <div class="right">
-          <div v-for="img in images" :key="img.id">
-            <img :src="require('@/assets/img/'+img.name)" alt="apartment image">
-          </div>
-          <div class="gallery-button" @click="showGallery">
-            <img class="g-button" src="@/assets/gallery.svg" alt=""> {{galleryImages.length}}
-          </div>
-          <viewer :images="galleryImages" ref="viewer"/>
-        </div>
+      <div class="mobile-image-section">
+        <vueper-slides fade :touchable="false">
+          <vueper-slide v-for="(slide, i) in slides"
+                        :key="i"
+                        :image="slide.image"
+                        :link="slide.link"
+
+          />
+        </vueper-slides>
       </div>
       <div class="main-section">
         <div class="left">
@@ -25,7 +20,9 @@
               <RatingStars count="5"/>
             </div>
             <div class="hotel-name">
-              Hilton Austin
+              <div class="name">
+                Hilton Austin
+              </div>
               <div class="price">
                 $ 253.00
                 <div class="duration">
@@ -35,6 +32,19 @@
             </div>
             <div class="hotel-address">
               500 E 4th St, Austin, TX 78701, United States
+            </div>
+            <div class="ratings">
+              <div class="title">
+                <div class="rating">
+                  4.8
+                </div>
+                <div class="text">
+                  Very good
+                </div>
+                <div class="count">
+                  936 ratings
+                </div>
+              </div>
             </div>
             <div class="hotel-category">
               <Badge v-for="badge in badges" :key="badge.id" :title="badge.name" outlined class="category-badge"/>
@@ -47,6 +57,46 @@
                 <ReadMore
                     limit="200"
                     body="Boasting a skylit indoor pool and 2 on-site dining options, this hotel is located across the street from Union Station. The eco-friendly property is adjacent from an airport express train to Toronto Pearson International Airport, 18 mi away. Lorem ipsum adem. Boasting a skylit indoor pool and 2 on-site dining options, this hotel is located across the street from Union Station. The eco-friendly property is adjacent from an airport express train to Toronto Pearson International Airport, 18 mi away. Lorem ipsum adem."/>
+              </div>
+            </div>
+            <div class="map">
+              <div class="map-title">Location</div>
+              <div class="address">
+                500 E 4th St, Austin, TX 78701, United States
+              </div>
+              <GmapMap
+                  :center="{lat:3, lng:101}"
+                  :zoom="7"
+                  map-type-id="terrain"
+                  style="height: 300px"
+              >
+                <GmapMarker
+                    :position="markerPosition"
+                />
+              </GmapMap>
+            </div>
+            <div class="progress-bars-section">
+              <span>Ratings</span>
+              <div class="ratings">
+                <div class="title">
+                  <div class="rating">
+                    4.8
+                  </div>
+                  <div class="text">
+                    Very good
+                  </div>
+                  <div class="count">
+                    936 ratings
+                  </div>
+                </div>
+              </div>
+              <div v-for="item in progressBarArr">
+              <span>
+                {{ item.title }}
+              </span>
+                <div class="bar">
+                  <ProgressBar :val="item.value"/>
+                </div>
               </div>
             </div>
             <div class="item">
@@ -99,43 +149,6 @@
             </div>
           </div>
         </div>
-        <div class="right-section">
-          <div class="map">
-            <GmapMap
-                :center="{lat:3, lng:101}"
-                :zoom="7"
-                map-type-id="terrain"
-                style="height: 300px"
-            >
-              <GmapMarker
-                  :position="markerPosition"
-              />
-            </GmapMap>
-          </div>
-          <div class="ratings">
-            <div class="title">
-              <div class="rating">
-                4.8
-              </div>
-              <div class="text">
-                Very good
-              </div>
-              <div class="count">
-                936 ratings
-              </div>
-            </div>
-            <div class="progress-bars-section">
-              <div v-for="item in progressBarArr">
-              <span>
-                {{ item.title }}
-              </span>
-                <div class="bar">
-                  <ProgressBar :val="item.value"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="issues">
         <span>Issues</span>
@@ -152,8 +165,8 @@
           </div>
         </div>
       </div>
-      <div class="last-search" v-if="false">
-        <span>Your search</span>
+      <div class="last-search">
+        <span>Nearby Hotels</span>
         <div>
           <Card
               class="hotel-card"
@@ -161,6 +174,7 @@
               :image="hotel.image"
               :address="hotel.address"
               :name="hotel.name"
+              :info-price="hotel.infoPrice"
               :rating="hotel.rating"
               :price="hotel.price"
               :price-with-taxes="hotel.priceWithTaxes"
@@ -175,22 +189,19 @@
 
 <script>
 import 'viewerjs/dist/viewer.css'
-import {component as Viewer} from "v-viewer"
-import { VueperSlides, VueperSlide } from 'vueperslides'
+import {VueperSlides, VueperSlide} from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 
 
 export default {
-  name: 'IndexPage',
+  name: 'IndexPageMobile',
   components: {
-    'Breadcrumbs': () => import('@/components/UI/Breadcrumbs'),
     'Badge': () => import('@/components/UI/Badge'),
     'RatingStars': () => import('@/components/UI/RatingStars'),
-    'ReadMore' : () => import('@/components/UI/ReadMore'),
-    'ProgressBar' : () => import('@/components/UI/ProgressBar'),
+    'ReadMore': () => import('@/components/UI/ReadMore'),
+    'ProgressBar': () => import('@/components/UI/ProgressBar'),
     'SubHeader': () => import('@/components/SubHeader'),
-    'Card': () => import('@/components/Card'),
-    Viewer,
+    'Card': () => import('@/components/MobileCard'),
     VueperSlides,
     VueperSlide
   },
@@ -363,6 +374,7 @@ export default {
           name: 'Shangri-La Toronto',
           rating: '5',
           price: '$ 354,00',
+          infoPrice: '$305.91',
           address: '500 E 4th St, Austin, TX 78701, United States',
           priceWithTaxes: '$ 429,00'
         },
@@ -371,6 +383,7 @@ export default {
           name: 'Shangri-La Toronto',
           rating: '4',
           price: '$ 354,00',
+          infoPrice: '$305.91',
           address: '500 E 4th St, Austin, TX 78701, United States',
           priceWithTaxes: '$ 429,00'
         },
@@ -379,6 +392,7 @@ export default {
           name: 'Shangri-La Toronto',
           rating: '5',
           price: '$ 354,00',
+          infoPrice: '$305.91',
           address: '500 E 4th St, Austin, TX 78701, United States',
           priceWithTaxes: '$ 429,00'
         },
@@ -387,11 +401,12 @@ export default {
           name: 'Shangri-La Toronto',
           rating: '2',
           price: '$ 354,00',
+          infoPrice: '$305.91',
           address: '500 E 4th St, Austin, TX 78701, United States',
           priceWithTaxes: '$ 429,00'
         }
       ],
-      markerPosition: { lat: 3, lng: 101 }
+      markerPosition: {lat: 3, lng: 101}
     }
   },
   methods: {
@@ -410,7 +425,7 @@ export default {
             zoomIn: 0,
             zoomOut: 0,
             oneToOne: 0,
-            reset:0,
+            reset: 0,
             prev: 4,
             play: {
               show: 0,
@@ -430,5 +445,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/desktop.scss";
+@import "src/styles/mobile";
 </style>

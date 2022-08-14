@@ -11,6 +11,9 @@
         <Button title="Login" white/>
       </div>
     </div>
+    <div class="hamburger">
+      <img src="@/assets/hamburger.svg" alt="moby-trip-logo"/>
+    </div>
   </header>
 </template>
 
@@ -48,6 +51,20 @@ header {
 
   .logo {
     display: flex;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+@media only screen and (max-width: 700px) {
+  header {
+    padding: 20px 40px;
+    .wrapper {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
   }
 }
 </style>

@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import MobileView from '../views/MobileView.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/desktop',
     name: 'home',
     component: HomeView
-  }
+  },
+  {
+    path: '/mobile',
+    name: 'mobile',
+    component: MobileView
+  },
+
 ]
 
 const router = new VueRouter({
