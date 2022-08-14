@@ -1,8 +1,13 @@
-# hotel
+# MobyTrip
 
 ## Project setup
 ```
 npm install
+```
+
+### Fill env file from .env.example
+```
+VUE_APP_GOOGLE_KEY=your key
 ```
 
 ### Compiles and hot-reloads for development
@@ -14,7 +19,3 @@ npm run serve
 ```
 npm run build
 ```
-
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
