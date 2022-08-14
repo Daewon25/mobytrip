@@ -320,12 +320,12 @@ export default {
         {
           title: 'Condition',
           rating: "4.4",
-          value: '95'
+          value: '90'
         },
         {
           title: 'Neighborhood',
           rating: "4.6",
-          value: '90'
+          value: '95'
         },
         {
           title: 'Overall',
@@ -335,7 +335,7 @@ export default {
         {
           title: 'Service',
           rating: "4.3",
-          value: '90'
+          value: '85'
         }
       ],
       hotelsCards: [
