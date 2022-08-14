@@ -41,6 +41,12 @@ export default {
   cursor: pointer;
   color: $primary-blue;
   font-weight: 500;
+  border: 1px solid transparent;
+  transition: all .7s ease;
+  &:hover {
+    background-color: #C3D7F3;
+    color: #FFFFFF;
+  }
 }
 
 .sm {

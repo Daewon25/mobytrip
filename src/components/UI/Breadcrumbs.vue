@@ -37,5 +37,8 @@ export default {
   &:hover {
     color: $primary-blue;
   }
+  &:last-child {
+    color: $primary-blue;
+  }
 }
 </style>

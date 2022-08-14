@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer>
     <div class="links">
       <div class="link">
         <a href="#">About us</a>
@@ -17,7 +17,7 @@
     <div class="copyrights">
       (c) 2022 mobytrip, All Rights Reserved
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -27,13 +27,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_colors.scss";
-.footer {
+footer {
   background: $blue2;
   padding: 48px 100px;
   display: flex;
   align-items: center;
-  margin-top: 100px;
   .links {
     display: flex;
     .link {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      {{ formattedBody }}
+      {{ formattedBody }} {{!showingFullText ? '...' : ''}}
     </p>
     <div class="read-more-btn" @click="showingFullText = !showingFullText">
       {{ getButtonText }} <img src="@/assets/arrow_down.svg" alt="" :class="{'arrow-up': showingFullText}">

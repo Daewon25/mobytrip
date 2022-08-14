@@ -39,9 +39,6 @@ header {
 
   .login-button {
     transition: all .7s ease;
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 
   .wrapper {

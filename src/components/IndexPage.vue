@@ -12,7 +12,7 @@
             <img :src="require('@/assets/img/'+img.name)" alt="apartment image">
           </div>
           <div class="gallery-button" @click="showGallery">
-            <img src="@/assets/gallery.svg" alt=""> 104+
+            <img class="g-button" src="@/assets/gallery.svg" alt=""> {{galleryImages.length}}
           </div>
           <viewer :images="galleryImages" ref="viewer"/>
         </div>
@@ -174,27 +174,20 @@
 </template>
 
 <script>
-import Breadcrumbs from "@/components/UI/Breadcrumbs";
-import Badge from "@/components/UI/Badge";
-import RatingStars from "@/components/UI/RatingStars";
-import ReadMore from "@/components/UI/ReadMore";
-import ProgressBar from "@/components/UI/ProgressBar";
-import Card from "@/components/Card";
-import SubHeader from "@/components/SubHeader";
 import 'viewerjs/dist/viewer.css'
 import {component as Viewer} from "v-viewer"
 
 export default {
   name: 'IndexPage',
   components: {
-    Breadcrumbs,
-    Badge,
-    RatingStars,
-    ReadMore,
-    ProgressBar,
-    SubHeader,
+    'Breadcrumbs': () => import('@/components/UI/Breadcrumbs'),
+    'Badge': () => import('@/components/UI/Badge'),
+    'RatingStars': () => import('@/components/UI/RatingStars'),
+    'ReadMore' : () => import('@/components/UI/ReadMore'),
+    'ProgressBar' : () => import('@/components/UI/ProgressBar'),
+    'SubHeader': () => import('@/components/SubHeader'),
+    'Card': () => import('@/components/Card'),
     Viewer,
-    Card
   },
   data() {
     return {
@@ -279,10 +272,6 @@ export default {
           name: 'Wheelchair-accessible'
         },
         {
-          icon: 'wifi',
-          name: 'Wi-fi'
-        },
-        {
           icon: 'no-smoking',
           name: 'Non-smoking establishment'
         },
@@ -298,8 +287,12 @@ export default {
       galleryImages: [
         "https://images.voordeeluitjes.nl/images/medium/164587_d7d7942eaa2840be3c4e16ecf323d551.jpg",
         "https://blog.bilderberg.nl/wp-content/uploads/2018/12/speulderbos-f.jpg",
+        "https://wallpaperaccess.com/full/2690549.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-hotel-4480742.jpg",
+        "https://3.bp.blogspot.com/-QRZjgZ2_fd4/V4jGAej3VnI/AAAAAAAABMk/q8-n-s5znLEkTXQaOXBAWKckmk2PVU-qQCEw/s1600/sonevajani-1880.jpg",
         "https://www.steigenberger.com/cache/images/028_SHR_Koeln_exteri_5305a036d3b62425e57b24a-1-1-1-1-1.jpg",
-        "https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg"
+        "https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg",
+        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
       ],
       progressBarArr: [
         {
@@ -383,7 +376,26 @@ export default {
       this.$viewerApi({
         images: this.galleryImages,
         options: {
-          title: false
+          title: false,
+          navbar: false,
+          transition: false,
+          movable: false,
+          toolbar: {
+            zoomIn: 0,
+            zoomOut: 0,
+            oneToOne: 0,
+            reset:0,
+            prev: 4,
+            play: {
+              show: 0,
+              size: 'large',
+            },
+            next: 4,
+            rotateLeft: 0,
+            rotateRight: 0,
+            flipHorizontal: 0,
+            flipVertical: 0,
+          }
         }
       })
     },
@@ -393,7 +405,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "@/styles/_colors.scss";
 
 .container {
   padding: 0 100px;
@@ -427,14 +438,23 @@ export default {
         bottom: 10px;
         right: 10px;
         transition: all .7s ease;
+        img {
+          min-width: 0;
+          margin-right: 5px;
+        }
         &:hover {
           transform: scale(1.1);
         }
-
-        img {
-          margin-right: 5px;
-        }
       }
+    }
+    .left {
+      img {
+        height: 99%;
+      };
+    }
+    img {
+      min-width: 100%;
+      width: 100%;
     }
   }
 
@@ -503,6 +523,7 @@ export default {
         }
 
         .text {
+          width: 75%;
           color: $gray;
         }
 
@@ -675,9 +696,13 @@ export default {
     }
   }
   .last-search {
+    background: #E8E9F3;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 40px 100px;
     span {
       display: inline-block;
-      margin: 60px 0 20px 0;
+      margin: 30px 0 20px 0;
       font-weight: 800;
       font-size: 26px;
       color: $black;

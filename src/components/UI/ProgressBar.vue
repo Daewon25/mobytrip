@@ -1,9 +1,9 @@
 <template>
   <div>
     <Progress
-        :percent="val"
+        :percent="+val"
         :format="formatVal"
-        line-height="12"
+        :line-height="12"
         color="#C3D7F3"
         bg-color="#F8F8F8"
     />
@@ -30,15 +30,15 @@ export default {
   },
   methods: {
     formatVal (val) {
-      if (val === '80') {
+      if (val === 80) {
         return '4.2'
-      } else if (val === '90') {
+      } else if (val === 90) {
         return '4.4'
-      } else if (val === '95') {
+      } else if (val === 95) {
         return '4.6'
-      } else if (val === '80') {
+      } else if (val === 80) {
         return '4.2'
-      } else if (val === '85') {
+      } else if (val === 85) {
         return '4.3'
       }
     }

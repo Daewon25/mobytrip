@@ -74,17 +74,20 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  background: #E8E9F3;
+  background: #FFFFFF;
   border-radius: 12px;
   cursor: pointer;
+  transition: .5s ease all;
+  &:hover {
+    box-shadow: 0 4px 20px rgba(1, 0, 2, 0.3);
+  }
+  .image {
+    overflow: hidden;
+  }
   img {
     margin-bottom: 24px;
     border-radius: 12px;
-    transition: .5s ease all;
     width: 100%;
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 }
 
@@ -104,6 +107,7 @@ export default {
     color: $green;
     font-weight: 800;
     font-size: 22px;
+    white-space: nowrap;
   }
 
   .period {
