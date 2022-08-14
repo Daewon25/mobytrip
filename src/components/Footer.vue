@@ -49,4 +49,25 @@ footer {
     font-size: 14px;
   }
 }
+
+@media only screen and (max-width: 700px) {
+  footer {
+    padding: 20px 30px;
+    flex-direction: column;
+    .links {
+      margin-bottom: 20px;
+      justify-content: center;
+      .link {
+        margin-right: 15px;
+        text-align: center;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .copyrights {
+      margin-left: 0;
+    }
+  }
+}
 </style>
