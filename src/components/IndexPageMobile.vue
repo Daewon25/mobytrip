@@ -149,13 +149,13 @@
         <span>Issues</span>
         <div>
           <div class="text">
-            COVID: Due to the pandemic, many accommodation and service providers may implement processes and policies to
+            • COVID: Due to the pandemic, many accommodation and service providers may implement processes and policies to
             help protect the safety of all of us. This may result in the unavailability or changes in certain services
             and amenities that are normally available from them. More info here
             <a href="https://cutt.ly/MT8BJcv">https://cutt.ly/MT8BJcv</a>
           </div>
           <div class="text">
-            USACANADA: Starting Dec. 6th travelers 2 and older are required to show negative test results within 1 day
+            • USACANADA: Starting Dec. 6th travelers 2 and older are required to show negative test results within 1 day
             of the flight‘s departure to the US before boarding.
           </div>
         </div>

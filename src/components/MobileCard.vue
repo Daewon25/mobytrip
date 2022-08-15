@@ -86,6 +86,9 @@ export default {
   border-radius: 12px;
   cursor: pointer;
   transition: .5s ease all;
+  &:last-child {
+    margin-right: 1em;
+  }
   &:hover {
     box-shadow: 0 4px 20px rgba(1, 0, 2, 0.3);
   }

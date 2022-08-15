@@ -5,7 +5,7 @@
       <Breadcrumbs :items="items"/>
       <div class="images-section">
         <div class="left">
-          <img src="@/assets/img/image_1.jpg" alt="apartment image">
+          <img src="@/assets/img/image_1.jpeg" alt="apartment image">
         </div>
         <div class="right">
           <div v-for="img in images" :key="img.id">
@@ -131,13 +131,13 @@
         <span>Issues</span>
         <div>
           <div class="text">
-            COVID: Due to the pandemic, many accommodation and service providers may implement processes and policies to
+            • COVID: Due to the pandemic, many accommodation and service providers may implement processes and policies to
             help protect the safety of all of us. This may result in the unavailability or changes in certain services
             and amenities that are normally available from them. More info here
             <a href="https://cutt.ly/MT8BJcv">https://cutt.ly/MT8BJcv</a>
           </div>
           <div class="text">
-            USACANADA: Starting Dec. 6th travelers 2 and older are required to show negative test results within 1 day
+            • USACANADA: Starting Dec. 6th travelers 2 and older are required to show negative test results within 1 day
             of the flight‘s departure to the US before boarding.
           </div>
         </div>
@@ -205,19 +205,19 @@ export default {
       images: [
         {
           id: 1,
-          name: 'image_right_1.png'
+          name: 'image_right_11.jpeg'
         },
         {
           id: 2,
-          name: 'image_right_2.png'
+          name: 'image_right_2.jpeg'
         },
         {
           id: 3,
-          name: 'image_right_3.png'
+          name: 'hotel_right_3.jpeg'
         },
         {
           id: 4,
-          name: 'image_right_4.png'
+          name: 'right_image_4.jpeg'
         }
       ],
       badges: [
