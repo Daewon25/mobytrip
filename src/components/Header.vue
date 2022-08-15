@@ -12,17 +12,32 @@
       </div>
     </div>
     <div class="hamburger">
-      <img src="@/assets/hamburger.svg" alt=""/>
+      <Slide right :closeOnNavigation="true" >
+        <a id="home" href="#">
+          <span>Home</span>
+        </a>
+        <a id="about" href="#">
+          <span>About</span>
+        </a>
+        <a id="find" href="#">
+          <span>Find</span>
+        </a>
+        <a id="Policy" href="#">
+          <span>Policy</span>
+        </a>
+      </Slide>
     </div>
   </header>
 </template>
 
 <script>
+import { Slide } from 'vue-burger-menu'
 export default {
   name: "Header",
   components: {
     'Button': () => import('@/components/UI/Button'),
     'Select': () => import('@/components/UI/Select'),
+    Slide
   },
   data() {
     return {
@@ -33,7 +48,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 header {
   background-color: $primary-blue;
   padding: 29px 100px;
@@ -55,6 +70,20 @@ header {
   }
   .hamburger {
     display: none;
+  }
+  .bm-burger-button {
+    top: 23px;
+  }
+  .bm-burger-bars {
+    background-color: #FFFFFF !important;
+  }
+  .bm-menu {
+    background: $light-blue;
+  }
+  .bm-item-list {
+    span {
+      color: $gray;
+    }
   }
 }
 @media only screen and (max-width: 700px) {
