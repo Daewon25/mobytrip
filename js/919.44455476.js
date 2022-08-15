@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkhotel"]=self["webpackChunkhotel"]||[]).push([[919],{2919:function(t,n,r){r.r(n),r.d(n,{default:function(){return c}});var s=function(){var t=this,n=t._self._c;return n("div",{staticClass:"rating-stars"},t._l(+t.count,(function(t){return n("div",{key:t,staticClass:"star"},[n("img",{attrs:{src:r(6380),alt:""}})])})),0)},a=[],e={name:"RatingStars",props:{count:{default:"5",type:String,required:!0}}},u=e,i=r(1001),l=(0,i.Z)(u,s,a,!1,null,"a003ffb6",null),c=l.exports}}]);
-//# sourceMappingURL=919.44455476.js.map
