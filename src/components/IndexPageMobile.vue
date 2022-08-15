@@ -186,18 +186,17 @@
 import 'viewerjs/dist/viewer.css'
 import {VueperSlides, VueperSlide} from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
-import Button from "@/components/UI/Button";
 
 export default {
   name: 'IndexPageMobile',
   components: {
-    Button,
     'Badge': () => import('@/components/UI/Badge'),
+    'Button': () => import('@/components/UI/Button'),
     'RatingStars': () => import('@/components/UI/RatingStars'),
     'ReadMore': () => import('@/components/UI/ReadMore'),
     'ProgressBar': () => import('@/components/UI/ProgressBar'),
     'SubHeader': () => import('@/components/SubHeader'),
-    'Card': () => import('@/components/MobileCard'),
+    'Card': () => import('@/components/UI/MobileCard'),
     'Rating': () => import('@/components/UI/Rating'),
     VueperSlides,
     VueperSlide
