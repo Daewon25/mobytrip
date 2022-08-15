@@ -73,6 +73,7 @@ header {
   }
   .bm-burger-button {
     top: 23px;
+    right: 20px !important;
   }
   .bm-burger-bars {
     background-color: #FFFFFF !important;
@@ -88,7 +89,7 @@ header {
 }
 @media only screen and (max-width: 700px) {
   header {
-    padding: 20px 40px;
+    padding: 20px 16px;
     .wrapper {
       display: none;
     }

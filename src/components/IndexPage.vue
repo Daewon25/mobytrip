@@ -11,7 +11,7 @@
           <div v-for="img in images" :key="img.id">
             <img :src="require('@/assets/img/'+img.name)" alt="apartment image">
           </div>
-          <div class="gallery-button" @click="showGallery">
+          <div class="gallery-button">
             <img class="g-button" src="@/assets/gallery.svg" alt=""> {{galleryImages.length}}
           </div>
           <viewer :images="galleryImages" ref="viewer"/>
@@ -45,7 +45,7 @@
               </div>
               <div class="text">
                 <ReadMore
-                    limit="200"
+                    limit="158"
                     body="Boasting a skylit indoor pool and 2 on-site dining options, this hotel is located across the street from Union Station. The eco-friendly property is adjacent from an airport express train to Toronto Pearson International Airport, 18 mi away. Lorem ipsum adem. Boasting a skylit indoor pool and 2 on-site dining options, this hotel is located across the street from Union Station. The eco-friendly property is adjacent from an airport express train to Toronto Pearson International Airport, 18 mi away. Lorem ipsum adem."/>
               </div>
             </div>

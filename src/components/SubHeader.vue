@@ -47,7 +47,7 @@ export default {
 }
 @media only screen and (max-width: 700px) {
   .sub-header {
-    padding: 0px 40px;
+    padding: 0px 16px;
     margin-bottom: 0px;
   }
 }

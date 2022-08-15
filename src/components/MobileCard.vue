@@ -91,6 +91,7 @@ export default {
   }
   .image {
     overflow: hidden;
+    width: 200px;
     img {
       margin-bottom: 24px;
       border-radius: 12px;

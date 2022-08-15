@@ -22,5 +22,12 @@ export default {
 <style lang="scss" scoped>
 .rating-stars {
   display: flex;
+  .star {
+    margin-right: 4px;
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
 }
 </style>

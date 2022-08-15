@@ -26,7 +26,7 @@ export default {
 .badge {
   display: inline-block;
   border-radius: 4px;
-  padding: 1px 8px;
+  padding: 3px 8px;
   color: $gray1;
   font-size: 12px;
   font-weight: 500;

@@ -39,6 +39,7 @@ export default {
   }
   &:last-child {
     color: $primary-blue;
+    cursor: default ;
   }
 }
 </style>

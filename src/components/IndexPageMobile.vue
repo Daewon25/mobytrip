@@ -24,16 +24,16 @@
             <div class="rating-and-category">
               <Badge title="Hotel" background class="badge"/>
               <RatingStars count="5"/>
-            </div>
-            <div class="hotel-name">
-              <div class="name">
-                Hilton Austin
-              </div>
               <div class="price">
                 $ 253.00
                 <div class="duration">
                   Per night
                 </div>
+              </div>
+            </div>
+            <div class="hotel-name">
+              <div class="name">
+                Hilton Austin
               </div>
             </div>
             <div class="hotel-address">
@@ -43,13 +43,14 @@
             <div class="hotel-category">
               <Badge v-for="badge in badges" :key="badge.id" :title="badge.name" outlined class="category-badge"/>
             </div>
+            <Button title="Choose Room" color="blue" size="xl"/>
             <div class="item">
               <div class="title">
                 Property Description
               </div>
               <div class="text">
                 <ReadMore
-                    limit="200"
+                    limit="155"
                     body="Boasting a skylit indoor pool and 2 on-site dining options, this hotel is located across the street from Union Station. The eco-friendly property is adjacent from an airport express train to Toronto Pearson International Airport, 18 mi away. Lorem ipsum adem. Boasting a skylit indoor pool and 2 on-site dining options, this hotel is located across the street from Union Station. The eco-friendly property is adjacent from an airport express train to Toronto Pearson International Airport, 18 mi away. Lorem ipsum adem."/>
               </div>
             </div>
@@ -70,7 +71,7 @@
               </GmapMap>
             </div>
             <div class="progress-bars-section">
-              <span>Ratings</span>
+              <span class="bar-title">Ratings</span>
               <div class="ratings">
                 <div class="title">
                   <div class="rating">
@@ -185,10 +186,12 @@
 import 'viewerjs/dist/viewer.css'
 import {VueperSlides, VueperSlide} from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
+import Button from "@/components/UI/Button";
 
 export default {
   name: 'IndexPageMobile',
   components: {
+    Button,
     'Badge': () => import('@/components/UI/Badge'),
     'RatingStars': () => import('@/components/UI/RatingStars'),
     'ReadMore': () => import('@/components/UI/ReadMore'),
@@ -306,19 +309,16 @@ export default {
       ],
       slides: [
         {
-          image: require('@/assets/img/hotel_1.png')
+          image: 'https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bHV4dXJ5JTIwaG90ZWx8ZW58MHx8MHx8&w=1000&q=80'
         },
         {
-          image: require('@/assets/img/hotel_2.png')
+          image: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=898&q=80'
         },
         {
-          image: require('@/assets/img/hotel_4.png')
+          image: 'https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
         },
         {
-          image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-        },
-        {
-          image: "https://blog.bilderberg.nl/wp-content/uploads/2018/12/speulderbos-f.jpg",
+          image: 'https://images.unsplash.com/photo-1559599238-308793637427?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80'
         },
       ],
       progressBarArr: [

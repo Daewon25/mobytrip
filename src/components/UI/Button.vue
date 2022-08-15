@@ -4,7 +4,10 @@
         class="button"
         :class="{
           'sm': size === 'sm',
-          'white': color === 'white'
+          'xl': size === 'xl',
+          'white': color === 'white',
+          'blue': color === 'blue'
+
          }"
     >
       {{ title }}
@@ -53,7 +56,14 @@ export default {
   border-radius: 10px;
   padding: 9px 41px;
 }
-
+.xl {
+  padding: 17px 15px;
+  border-radius: 10px;
+}
+.blue {
+  background: $primary-blue;
+  color: #FFFFFF;
+}
 .white {
   background: #FFFFFF;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);

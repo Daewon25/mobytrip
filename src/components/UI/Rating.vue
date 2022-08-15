@@ -2,7 +2,7 @@
   <div class="ratings">
     <div class="title">
       <div class="rating">
-        {{ rating }}
+        <span>{{ rating }}</span>
       </div>
       <div class="text">
         {{ text }}
@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .ratings {
   margin-top: 50px;
 
@@ -53,11 +53,13 @@ export default {
       border-radius: 5px;
       color: #FFFFFF;
       font-weight: 800;
-      font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 15px;
+      span {
+        font-size: 18px;
+      }
     }
 
     .text {
@@ -70,6 +72,18 @@ export default {
     .count {
       font-size: 14px;
       color: $gray;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .ratings {
+    margin-top: 0px;
+    margin-bottom: 18px;
+    .title {
+      margin-bottom: 15px !important;
+      .rating {
+        font-size: 12px !important;
+      }
     }
   }
 }
